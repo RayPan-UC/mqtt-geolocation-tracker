@@ -1,9 +1,11 @@
 // Initialize the Leaflet map centered on Calgary
 const map = L.map("map").setView([51.0447, -114.0719], 13);
 
-// Add OpenStreetMap tile layer
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution: "© OpenStreetMap contributors",
+// Add CartoDB Positron tile layer (light grey/white)
+L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>',
+  subdomains: "abcd",
+  maxZoom: 20,
 }).addTo(map);
 
 // Store the current marker so we can update it

@@ -9,21 +9,27 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: #1a1a2e;
-  color: #eee;
+  background: #f0f4fb;
+  color: #3a4a6b;
+}
+
+h2 {
+  font-size: 1.1rem;
+  text-align: center;
+  background: #2c3e6b;
+  color: #ffffff;
+  padding: 15px 12px;
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
 }
 
 #controls {
-  padding: 12px;
-  background: #16213e;
+  padding: 8px 12px 10px;
+  background: #ffffff;
+  border-bottom: 1px solid #d0d9ec;
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-#controls h2 {
-  font-size: 1.1rem;
-  text-align: center;
-  color: #e94560;
 }
 
 .row {
@@ -33,28 +39,31 @@ body {
 .row input {
   min-width: 0;
   flex: 1;
-  padding: 8px 10px;
+  padding: 5px 10px;
   border-radius: 8px;
-  border: 1px solid #0f3460;
-  background: #0f3460;
-  color: #eee;
+  border: 1px solid #d0d9ec;
+  background: #e8eef8;
+  color: #3a4a6b;
   font-size: 0.9rem;
 }
 .row input::-moz-placeholder {
-  color: #aaa;
+  color: #8899bb;
 }
 .row input::placeholder {
-  color: #aaa;
+  color: #8899bb;
 }
 .row button {
   padding: 8px 14px;
   border-radius: 8px;
   border: none;
-  background: #e94560;
+  background: #6a9fd8;
   color: white;
   font-size: 0.9rem;
   cursor: pointer;
   white-space: nowrap;
+}
+.row button:hover {
+  background: #5488c4;
 }
 .row button:active {
   opacity: 0.8;
@@ -62,27 +71,33 @@ body {
 
 #connectBtn {
   width: 100%;
-  padding: 10px;
+  padding: 6px;
   font-size: 1rem;
-  background: #e94560;
+  background: #6a9fd8;
   border-radius: 8px;
   border: none;
   color: white;
   cursor: pointer;
 }
+#connectBtn:hover {
+  background: #5488c4;
+}
 #connectBtn.connected {
-  background: #444;
+  background: #aab8cc;
 }
 
 #shareBtn {
   width: 100%;
   padding: 10px;
   font-size: 1rem;
-  background: #0f3460;
+  background: #9abfe8;
   border-radius: 8px;
   border: none;
   color: white;
   cursor: pointer;
+}
+#shareBtn:hover {
+  background: rgb(120.7677419355, 169.9419354839, 224.4322580645);
 }
 #shareBtn:active {
   opacity: 0.8;
@@ -94,10 +109,10 @@ body {
   padding: 4px;
 }
 #status.connected {
-  color: #4caf50;
+  color: #3a8a50;
 }
 #status.disconnected {
-  color: #e94560;
+  color: #c0392b;
 }
 
 #map {

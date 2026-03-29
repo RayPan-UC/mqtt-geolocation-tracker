@@ -1,3 +1,22 @@
+// Colour palette 
+$bg:           #f0f4fb;   // page background
+$panel-bg:     #ffffff;   // control panel
+$border:       #d0d9ec;
+$input-bg:     #e8eef8;
+$text:         #3a4a6b;
+$text-muted:   #8899bb;
+
+$accent:       #6a9fd8;   // primary button / interactive
+$accent-hover: #5488c4;
+$share-bg:     #9abfe8;
+
+$h2-bg:        #2c3e6b;   // "MQTT Tracker" header — dark bg / white text
+$h2-text:      #ffffff;
+
+$ok:           #3a8a50;
+$err:          #c0392b;
+// ──────────────────────────────────────────────────────────────────────────
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,22 +28,27 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: #1a1a2e;
-  color: #eee;
+  background: $bg;
+  color: $text;
+}
+
+h2 {
+    font-size: 1.1rem;
+    text-align: center;
+    background: $h2-bg;
+    color: $h2-text;
+    padding: 15px 12px;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
 }
 
 #controls {
-  padding: 12px;
-  background: #16213e;
+  padding: 8px 12px 10px;    
+  background: $panel-bg;
+  border-bottom: 1px solid $border;
   display: flex;
   flex-direction: column;
   gap: 8px;
-
-  h2 {
-    font-size: 1.1rem;
-    text-align: center;
-    color: #e94560;
-  }
 }
 
 .row {
@@ -34,15 +58,15 @@ body {
   input {
     min-width: 0;
     flex: 1;
-    padding: 8px 10px;
+    padding: 5px 10px;
     border-radius: 8px;
-    border: 1px solid #0f3460;
-    background: #0f3460;
-    color: #eee;
+    border: 1px solid $border;
+    background: $input-bg;
+    color: $text;
     font-size: 0.9rem;
 
     &::placeholder {
-      color: #aaa;
+      color: $text-muted;
     }
   }
 
@@ -50,46 +74,43 @@ body {
     padding: 8px 14px;
     border-radius: 8px;
     border: none;
-    background: #e94560;
+    background: $accent;
     color: white;
     font-size: 0.9rem;
     cursor: pointer;
     white-space: nowrap;
 
-    &:active {
-      opacity: 0.8;
-    }
+    &:hover  { background: $accent-hover; }
+    &:active { opacity: 0.8; }
   }
 }
 
 #connectBtn {
   width: 100%;
-  padding: 10px;
+  padding: 6px;
   font-size: 1rem;
-  background: #e94560;
+  background: $accent;
   border-radius: 8px;
   border: none;
   color: white;
   cursor: pointer;
 
-  &.connected {
-    background: #444;
-  }
+  &:hover    { background: $accent-hover; }
+  &.connected { background: #aab8cc; }
 }
 
 #shareBtn {
   width: 100%;
   padding: 10px;
   font-size: 1rem;
-  background: #0f3460;
+  background: $share-bg;
   border-radius: 8px;
   border: none;
   color: white;
   cursor: pointer;
 
-  &:active {
-    opacity: 0.8;
-  }
+  &:hover  { background: darken($share-bg, 8%); }
+  &:active { opacity: 0.8; }
 }
 
 #status {
@@ -97,13 +118,8 @@ body {
   font-size: 0.85rem;
   padding: 4px;
 
-  &.connected {
-    color: #4caf50;
-  }
-
-  &.disconnected {
-    color: #e94560;
-  }
+  &.connected    { color: $ok; }
+  &.disconnected { color: $err; }
 }
 
 #map {
