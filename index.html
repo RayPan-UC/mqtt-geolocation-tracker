@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MQTT Geolocation Tracker</title>
+
+  <!-- Leaflet CSS: styles for the interactive map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <!-- Custom styles (compiled from style.scss) -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- Control panel: MQTT connection settings and action buttons -->
+  <div id="controls">
+    <h2>📍 MQTT Tracker</h2>
+
+    <!-- MQTT broker connection settings -->
+    <div class="row">
+      <input id="host" type="text" placeholder="Host" value="test.mosquitto.org"/>
+      <input id="port" type="number" placeholder="Port" value="8080"/>
+    </div>
+
+    <!-- Connect / Disconnect button -->
+    <div class="row">
+      <button id="connectBtn" onclick="handleConnect()">▶ Start</button>
+    </div>
+
+    <!-- Publish topic input -->
+    <div class="row">
+      <input id="topic" type="text" placeholder="Topic" value="ENGO651/RayPan/my_temperature"/>
+    </div>
+
+    <!-- Custom message publish -->
+    <div class="row">
+      <input id="message" type="text" placeholder="Message"/>
+      <button onclick="handlePublish()">Send</button>
+    </div>
+
+    <!-- Share current location + random temperature as GeoJSON -->
+    <div class="row">
+      <button id="shareBtn" onclick="handleShareStatus()">📡 Share My Status</button>
+    </div>
+
+    <!-- Connection status indicator -->
+    <div id="status" class="disconnected">● Disconnected</div>
+  </div>
+
+  <!-- Map container: rendered by Leaflet -->
+  <div id="map"></div>
+
+  <!-- Paho MQTT: WebSocket-based MQTT client library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+
+  <!-- Leaflet JS: interactive map core library -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- MQTT connection / publish / subscribe logic -->
+  <script src="js/mqtt.js"></script>
+
+  <!-- Geolocation and map marker logic -->
+  <script src="js/geo.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #1a1a2e;
+  color: #eee;
+}
+
+#controls {
+  padding: 12px;
+  background: #16213e;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#controls h2 {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #e94560;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+.row input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #0f3460;
+  background: #0f3460;
+  color: #eee;
+  font-size: 0.9rem;
+}
+.row input::-moz-placeholder {
+  color: #aaa;
+}
+.row input::placeholder {
+  color: #aaa;
+}
+.row button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #e94560;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.row button:active {
+  opacity: 0.8;
+}
+
+#connectBtn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background: #e94560;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+#connectBtn.connected {
+  background: #444;
+}
+
+#shareBtn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background: #0f3460;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+#shareBtn:active {
+  opacity: 0.8;
+}
+
+#status {
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 4px;
+}
+#status.connected {
+  color: #4caf50;
+}
+#status.disconnected {
+  color: #e94560;
+}
+
+#map {
+  flex: 1;
+}/*# sourceMappingURL=style.css.map */
