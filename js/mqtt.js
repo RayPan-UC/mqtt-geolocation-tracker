@@ -44,6 +44,7 @@ function onConnect() {
   document.getElementById("connectBtn").textContent = "■ End";
   document.getElementById("host").disabled = true;
   document.getElementById("port").disabled = true;
+  document.getElementById("topic").disabled = true;
 
   // Subscribe to the temperature topic
   const topic = "ENGO651/RayPan/my_temperature";

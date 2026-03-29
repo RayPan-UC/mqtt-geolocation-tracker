@@ -38,7 +38,7 @@ function updateMap(geojson) {
     fillOpacity: 0.8,
   })
     .addTo(map)
-    .bindPopup(`🌡️ Temperature: ${temp.toFixed(1)}°C`)
+    .bindPopup(`🌡️ Temperature: ${temp.toFixed(1)}°C (Random generated)`)
     .openPopup();
 
   // Pan the map to the new location
@@ -52,6 +52,7 @@ function handleShareStatus() {
     return;
   }
 
+  // Call Geolocation API 
   navigator.geolocation.getCurrentPosition(
     (position) => {
       const lat = position.coords.latitude;
