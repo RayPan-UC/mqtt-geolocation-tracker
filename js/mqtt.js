@@ -108,7 +108,7 @@ function handlePublish() {
   console.log("Published to", topic, ":", payload);
 
   // Clear message box
-  document.getElementById("message").value  = ""
+  document.getElementById("message").value = ""
 }
 
 // Disconnect from the broker
